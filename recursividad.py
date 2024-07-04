@@ -7,7 +7,7 @@ def mostrar_numero(numero):
         print( numero, end=" ,")
         return mostrar_numero(numero-1)
 
-mostrar_numero(6)
+mostrar_numero(10)
     
 
 #https://pythontutor.com/visualize.html#mode=edit
