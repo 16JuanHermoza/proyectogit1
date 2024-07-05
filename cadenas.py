@@ -10,7 +10,6 @@ def palindroma(lista):
 
 mi_lista = [1,2,3,3,2,1]
 print(palindroma(mi_lista))
-mi_lista2 = [1,6,3,6,2]
-print(palindroma(mi_lista2))
+
  
 
