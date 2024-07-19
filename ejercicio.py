@@ -17,8 +17,3 @@ for i in range(filas):
 print("Matriz con ceros en los bordes:")
 for fila in matriz:
     print(fila)
-
-
-
-
-
