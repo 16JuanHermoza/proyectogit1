@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td{
+            border: solid 1px black;
+            padding: 15px;
+            background-color: beige;
+        }
+        div{
+            display: flex;
+            justify-content: center;
+        }
+        h1{
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Matriz</h1>
+    <input type="number" id="inpfila" min="1" max="100" value="5">
+    <input type="number" id="inpcolumna"  min="1" max="100" value="5">
+    <button onclick="generarMatriz()">Generar matriz</button> 
+    <div>
+        <table id="matriz"></table>
+    </div>
+    <!--seccion de js-->
+    <script>
+        // función para crear tablero con el objeto matriz
+        function impresion(matriz) {
+            const tablero = document.getElementById("matriz");
+            tablero.innerHTML = "";
+            for (let i = 0; i < matriz.length; i++) {
+                let fila = tablero.insertRow();
+                for (let j = 0; j < matriz[0].length; j++) {
+                    let columna = fila.insertCell();
+                    columna.innerHTML = matriz[i][j];
+                }
+            }
+        }
+
+        function generarMatriz() {
+            // función para llenar la matriz
+            let fila = parseInt(document.getElementById("inpfila").value);
+            let columna = parseInt(document.getElementById("inpcolumna").value);
+            let matriz = Array.from(Array(fila), () => Array(columna).fill(0));
+            let inicio = 1;
+            // recorre filas
+            for (let i = 0; i < matriz.length; i++) {
+                let reemplazo = inicio;
+                // recorre columnas
+                for (let j = 0; j < matriz[0].length; j++) {
+                    matriz[i][j] = reemplazo;
+                    reemplazo = reemplazo + fila;
+                }
+                inicio++;
+            }
+            impresion(matriz);
+        }
+    </script>
+</body>
+</html>

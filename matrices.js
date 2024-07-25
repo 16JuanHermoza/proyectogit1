@@ -1,19 +1,12 @@
-let fila_columna = 5;
-let matriz = Array.from(Array(fila_columna), () => Array(fila_columna).fill(0));
+let matriz1_columna1 = 5;
+let matriz1 = Array.from(Array(matriz1_columna1), () => Array(matriz1_columna1).fill(0));
 
-let max_fila = fila_columna - 1;
-let max_columna = fila_columna - 1;
+let max_fila = matriz1_columna1 - 1;
+let max_columna = matriz1_columna1 - 1;
 let contador = 1;
-for (let i = max_fila; i >= 0; i--) {
-    matriz[i][i] = contador;
+for (let i = 1; i >= max_columna; i++) {
+    matriz1[i][i] = contador + 5;
     contador++;
 }
 
-for (let i = 0; i <= max_fila; i++) {
-    if (matriz[i][max_columna - i] == 0) {
-        matriz[i][max_columna - i] = contador;
-        contador++;
-    }
-}
-
-console.log(matriz);
+console.log(matriz1);
